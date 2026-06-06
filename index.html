@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyber URL Risk Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="analysis-panel" aria-labelledby="app-title">
+        <div class="title-row">
+          <div>
+            <p class="eyebrow">Defensive Cybersecurity Tool</p>
+            <h1 id="app-title">URL Risk Analyzer</h1>
+          </div>
+          <div class="status-pill" id="status-pill">Ready</div>
+        </div>
+
+        <form id="url-form" class="url-form">
+          <label for="url-input">URL to analyze</label>
+          <div class="input-row">
+            <input id="url-input" name="url" type="text" autocomplete="off" spellcheck="false" placeholder="https://example.com/login">
+            <button type="submit">Analyze</button>
+          </div>
+        </form>
+
+        <div class="sample-row" aria-label="Sample URLs">
+          <button type="button" data-sample="https://login.microsoftonline.com/common/oauth2/v2.0/authorize">Microsoft login</button>
+          <button type="button" data-sample="https://secure-paypal.com.account-login.example.ru/update?session=123">Spoofed login</button>
+          <button type="button" data-sample="http://192.168.1.15/paypal/verify-account">IP host</button>
+        </div>
+
+        <section class="score-section" aria-live="polite">
+          <div class="score-ring" id="score-ring">
+            <span id="score-value">0</span>
+            <small>/100</small>
+          </div>
+          <div>
+            <p class="risk-label" id="risk-label">No analysis yet</p>
+            <p class="risk-summary" id="risk-summary">Enter a URL to generate an analyst-style risk summary.</p>
+          </div>
+        </section>
+      </section>
+
+      <section class="findings-grid">
+        <article class="findings-card">
+          <h2>Risk Signals</h2>
+          <ul id="findings-list">
+            <li class="muted">No findings yet.</li>
+          </ul>
+        </article>
+
+        <article class="findings-card">
+          <h2>URL Breakdown</h2>
+          <dl class="breakdown-list" id="breakdown-list">
+            <div><dt>Protocol</dt><dd>-</dd></div>
+            <div><dt>Host</dt><dd>-</dd></div>
+            <div><dt>Path</dt><dd>-</dd></div>
+            <div><dt>Query</dt><dd>-</dd></div>
+          </dl>
+        </article>
+
+        <article class="findings-card report-card">
+          <h2>Analyst Report</h2>
+          <textarea id="report-output" readonly>This report will populate after analysis.</textarea>
+          <button type="button" id="copy-report">Copy report</button>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
