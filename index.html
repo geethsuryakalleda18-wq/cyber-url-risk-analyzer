@@ -22,6 +22,7 @@
           <div class="input-row">
             <input id="url-input" name="url" type="text" autocomplete="off" spellcheck="false" placeholder="https://example.com/login">
             <button type="submit">Analyze</button>
+            <button type="button" id="clear-analysis" class="secondary-button">Clear</button>
           </div>
         </form>
 
@@ -59,6 +60,24 @@
             <div><dt>Path</dt><dd>-</dd></div>
             <div><dt>Query</dt><dd>-</dd></div>
           </dl>
+        </article>
+
+        <article class="findings-card history-card">
+          <h2>Recent Analyses</h2>
+          <div class="history-shell">
+            <table>
+              <thead>
+                <tr>
+                  <th>URL</th>
+                  <th>Score</th>
+                  <th>Risk</th>
+                </tr>
+              </thead>
+              <tbody id="history-list">
+                <tr><td colspan="3" class="muted">No recent analyses yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
         </article>
 
         <article class="findings-card report-card">
