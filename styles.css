@@ -9,6 +9,7 @@
   --amber: #bd7200;
   --red: #c43d32;
   --blue: #246b9f;
+  --soft: #edf3f7;
   --shadow: 0 20px 50px rgba(23, 33, 29, 0.12);
 }
 
@@ -105,7 +106,7 @@ label {
 
 .input-row {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   gap: 10px;
 }
 
@@ -131,6 +132,15 @@ button {
 
 button:hover {
   background: #2a3832;
+}
+
+.secondary-button {
+  background: #edf3f7;
+  color: #20342c;
+}
+
+.secondary-button:hover {
+  background: #dce7e0;
 }
 
 .sample-row {
@@ -235,6 +245,33 @@ li {
   line-height: 1.45;
 }
 
+.severity {
+  display: inline-block;
+  min-width: 64px;
+  margin-right: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.severity-high {
+  background: #fbe7e4;
+  color: var(--red);
+}
+
+.severity-medium {
+  background: #fff0d7;
+  color: var(--amber);
+}
+
+.severity-low {
+  background: #e9f5ee;
+  color: var(--green);
+}
+
 .muted {
   color: var(--muted);
 }
@@ -263,6 +300,38 @@ dt {
 dd {
   min-width: 0;
   margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.history-card {
+  grid-column: 1 / -1;
+}
+
+.history-shell {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+td:first-child {
+  max-width: 620px;
   overflow-wrap: anywhere;
 }
 
